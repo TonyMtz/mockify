@@ -19,7 +19,7 @@ let todoResource = new Resource('/todos', {
     },
     put: function *() {
         var record = yield parse(this);
-        this.body = yield Todo.update(this.params.id, record.todo);
+        this.body = yield {todo: Todo.update(this.params.id, record.todo)};
     },
     delete: function *() {
         this.body = yield Todo.destroy(this.params.id);
