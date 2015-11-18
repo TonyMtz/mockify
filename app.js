@@ -22,6 +22,7 @@ app.use(mount('/v1', api.middleware()));
 
 require('./resources/statuses')(api);
 require('./resources/todos')(api);
+require('./resources/users')(api);
 
 api.get('/test', function *() {
     this.body = "Hello, World";

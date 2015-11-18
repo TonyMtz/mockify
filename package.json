@@ -1,7 +1,6 @@
 {
-  "name": "wall",
+  "name": "restmock",
   "version": "1.0.0",
-  "private": true,
   "engines": {
     "node": "4.2.1"
   },
