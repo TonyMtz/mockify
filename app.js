@@ -11,9 +11,6 @@ import config from './config';
 let app = koa();
 let pages = new Router;
 let api = new Router;
-//let render = views(__dirname + '/views');
-//let render = views(__dirname + '/views', { map : {html : 'ejs'}}),
-//app.use(views('./views', 'jade'));
 
 if ('development' === app.env) {
     app.use(logger());
@@ -21,21 +18,10 @@ if ('development' === app.env) {
 
 app.use(cors());
 app.use(json());
-app.use(mount('/api', api.middleware()));
-
-//app.use(mount('/', pages.middleware()));
-//app.use()
+app.use(mount('/v1', api.middleware()));
 
 require('./resources/statuses')(api);
 require('./resources/todos')(api);
-
-//app.use(route.get('/', function *() {
-//    this.body = yield render('index.html', {
-//        siteName: 'wall',
-//        /* helper: list of routes and methods */
-//        routes: route.routes
-//    });
-//}));
 
 api.get('/test', function *() {
     this.body = "Hello, World";

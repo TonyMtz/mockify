@@ -7,7 +7,8 @@
   },
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/babel-node -- ./node_modules/.bin/gulp test-all",
-    "start": "./node_modules/.bin/babel-node -- ./bin/www"
+    "start": "NODE_ENV=dev ./node_modules/.bin/babel-node -- ./bin/www",
+    "prod": "NODE_ENV=prod ./node_modules/.bin/babel-node -- ./bin/www"
   },
   "dependencies": {
     "babel": "^5.8.23",
